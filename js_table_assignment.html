@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table >
+        <thead>
+            <tr><td>SN</td>
+                <td>Company Name</td>
+                <td>Company Email</td>
+                <td>Company Phone</td>
+                <td>Company Location</td>
+            </tr>
+        </thead>
+        <tbody id="table-value">
+
+        </tbody>
+    </table>
+
+    <script>
+        //create an array of companies with various details and pass them through the DOM 
+        companies = [
+            {
+                'name':"Company A",
+                'email':"abc@gmail.com",
+                'phone':"08189737752",
+                'location':"Abuja"
+            },
+            {
+                'name':"Company B",
+                'email':"def@gmail.com",
+                'phone':"123456789",
+                'location':"Lagos"
+            },{
+                'name':"Company C",
+                'email':"ghi@gmail.com",
+                'phone':"08189737752",
+                'location':"Abuja"
+            }
+        ]
+
+        row = document.getElementById('table-value')
+        for (i = 0; i < companies.length;++i){
+            row.innerHTML += `
+                <tr>
+                    <td>${i+ 1}</td>
+                    <td>${companies[i].name}</td>
+                    <td>${companies[i].email}</td>
+                    <td>${companies[i].phone}</td>
+                    <td>${companies[i].location}</td>
+                </tr>
+            `
+        }
+    </script>
+</body>
+</html>
